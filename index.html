@@ -12,28 +12,14 @@
     <main class="container">
       <div class="container-left">
         <h1>Foodbyte Menu</h1>
-        <button>Add New Menu</button>
-        <section>
-          <div class="menu-item">
-            <button>+</button>
-            <img
-              class="menu-image"
-              src="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/05/nasi-goreng.jpg"
-              alt="Nasi Goreng"
-            />
-            <span>Nasi Goreng</span>
-            <button>DELETE</button>
-          </div>
-          <div class="menu-item">
-            <button>+</button>
-            <img
-              class="menu-image"
-              src="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2016/05/nasi-goreng.jpg"
-              alt="Nasi Goreng"
-            />
-            <span>Nasi Goreng</span>
-            <button>DELETE</button>
-          </div>
+        <input
+          class="button button-blue button-add-menu"
+          type="button"
+          onclick="App.openAddNewMenu()"
+          value="Add New Menu"
+        />
+        <section id="menu-list" class="menu-list">
+          <!-- MENU LIST -->
         </section>
       </div>
 
@@ -42,11 +28,15 @@
           <form class="collection-title">
             <h2>Collection Name</h2>
             <input
-              class="input-collection-name"
+              class="input-text input-collection-name"
               type="text"
               placeholder="Your collection name"
             />
-            <input type="submit" value="Save Collection" />
+            <input
+              class="button button-blue button-save-collection"
+              type="submit"
+              value="Save Collection"
+            />
           </form>
           <section class="menu-list">
             <div class="menu-item">
