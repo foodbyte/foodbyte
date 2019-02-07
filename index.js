@@ -36,9 +36,9 @@ const App = {
     const $menuList = document.getElementById('menu-list')
     $menuList.innerHTML = ''
 
-    Storage.menuList.data.forEach(menuItem => {
+    Storage.menuList.data.forEach((menuItem, index) => {
       const div = document.createElement('div')
-      div.setAttribute('class', 'menu-item')
+      div.setAttribute('class', `menu-item animated faster fadeInUp`)
       div.innerHTML = `
         <button class="button button-green button-add-menu-to-collection"
         onclick="App.addMenuItemToSelectedCollection(${menuItem.id})">
@@ -67,7 +67,7 @@ const App = {
 
     Storage.collectionMenuList.data.forEach(menuItem => {
       const div = document.createElement('div')
-      div.setAttribute('class', 'menu-item')
+      div.setAttribute('class', `menu-item animated faster fadeInUp`)
       div.innerHTML = `
         <img
           class="menu-image"
