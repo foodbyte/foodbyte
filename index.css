@@ -22,12 +22,20 @@ body {
 }
 
 .menu-image {
-  height: 50px;
+  object-fit: cover;
+  height: 80px;
+  width: 80px;
   border-radius: 10px;
 }
 
 .menu-item {
   margin: 10px 0;
+  align-items: center;
+  display: flex;
+}
+
+.menu-item * {
+  margin: 5px;
 }
 
 .collection {
@@ -73,14 +81,18 @@ body {
   background: #dd0044;
 }
 
+.button-green {
+  background: #88ee88;
+}
+
 .button-delete-menu-item {
   font-size: 0.5em;
 }
 
 .input-text {
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding: 4px 10px;
   border: 1px solid #cccccc;
-  border-radius: 10px;
-  min-width: 500px;
+  border-radius: 2px;
+  min-width: 300px;
 }
