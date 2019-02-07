@@ -1,1 +1,1 @@
-console.log('Foodbyte');
+console.log('Foodbyte')
