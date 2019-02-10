@@ -12,6 +12,31 @@ const Storage = {
         name: 'Soto Ayam',
         imageUrl: 'assets/soto-ayam.jpg',
       },
+      {
+        id: 2,
+        name: 'Soto Ayam',
+        imageUrl: 'assets/soto-ayam.jpg',
+      },
+      {
+        id: 2,
+        name: 'Soto Ayam',
+        imageUrl: 'assets/soto-ayam.jpg',
+      },
+      {
+        id: 2,
+        name: 'Soto Ayam',
+        imageUrl: 'assets/soto-ayam.jpg',
+      },
+      {
+        id: 1,
+        name: 'Nasi Goreng',
+        imageUrl: 'assets/nasi-goreng.jpg',
+      },
+      {
+        id: 1,
+        name: 'Nasi Goreng',
+        imageUrl: 'assets/nasi-goreng.jpg',
+      },
     ],
   },
 }
@@ -24,8 +49,14 @@ const App = {
       const div = document.createElement('div')
       div.setAttribute('class', 'menu-item')
       div.innerHTML = `
-      <button>+</button> <img class='item-image' src="${item.imageUrl}">
-      <span>${item.name}</span>
+        <div class="m-item-image">
+          <img class="item-image" src="${item.imageUrl}">
+          <div class="m-bottom-design"></div>
+        </div>
+        <span>${item.name}</span>
+        <div>
+          <button>Add to this week</button> 
+        </div>
       `
       $menuItems.append(div)
     })

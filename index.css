@@ -1,11 +1,62 @@
 body {
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
+  /* background-color: aquamarine; */
+}
+
+.container {
+  display: flex;
 }
 
 .item-image {
   object-fit: cover;
-  height: 100px;
-  width: 100px;
+  width: 300px;
+  height: 400px;
   border-radius: 10px;
+}
+
+#menu-items {
+  width: 500px;
+  display: flex;
+  border-radius: 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.menu-item {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0 0 5px #d7d7d7;
+  border-radius: 7px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.m-item-image {
+  position: relative;
+}
+.m-bottom-design {
+  height: 5px;
+  background-image: url(https://static.afcdn.com/relmrtn/Front/PageType/marmitonHomepage/assets/nuage.svg);
+  background-size: 20px 10px;
+
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  z-index: 1;
+}
+
+button {
+  background: #f47321;
+  border-radius: 5px;
+  width: 150px;
+  margin: 5px;
+  color: white;
+  font-size: 1rem;
 }
