@@ -42,10 +42,9 @@ const Storage = {
 }
 
 const App = {
-  displayMenu: () => {
+  displayMenu: dishes => {
     const $menuItems = document.getElementById('menu-items')
-    let menuItems = Storage.menuList.data
-    menuItems.forEach(item => {
+    dishes.forEach(item => {
       const div = document.createElement('div')
       div.setAttribute('class', 'menu-item')
       div.innerHTML = `
@@ -75,6 +74,19 @@ const App = {
     $menuItems.innerHTML = ''
     App.displayMenu()
   },
+  searchItem: event => {
+    event.preventDefault()
+    const word = document.getElementById('search-word').value
+    let filteredDishes = Storage.menuList.data.filter(dish => {
+      return dish.name === word
+    })
+    console.log(filteredDishes)
+    const $menuItems = document.getElementById('menu-items')
+    $menuItems.innerHTML = ''
+    App.displayMenu(filteredDishes)
+  },
 }
 
-App.displayMenu()
+let menuItems = Storage.menuList.data
+
+App.displayMenu(menuItems)

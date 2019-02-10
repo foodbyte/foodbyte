@@ -10,7 +10,17 @@
   <body>
     <div class="container">
       <div class="left-container">
-        <h1>FoodByte Menu</h1>
+        <div class="recipe-home-search">
+          <h1>FoodByte Menu</h1>
+          <form onsubmit="App.searchItem(event)" class="menu-form">
+            <input
+              id="search-word"
+              type="text"
+              placeholder="Search a dish ... "
+            />
+            <input type="submit" value="Find Dish" />
+          </form>
+        </div>
         <button onclick="App.addItem()">Add A Dish</button>
         <div id="menu-items"></div>
       </div>
