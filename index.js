@@ -50,9 +50,11 @@ const App = {
     App.displayWeeklyJournal(weeklyItems)
   },
 
-  displayMenu: dishes => {
+  displayMenu: () => {
     const $menuItems = document.getElementById('menu-items')
-    dishes.forEach(item => {
+    let menuItems = Storage.menuList.data
+
+    menuItems.forEach(item => {
       const div = document.createElement('div')
       div.setAttribute('class', 'menu-item')
       div.innerHTML = `
@@ -83,10 +85,11 @@ const App = {
     Storage.menuList.data.push(newItem)
     const $menuItems = document.getElementById('menu-items')
     $menuItems.innerHTML = ''
+
     App.displayMenu()
   },
 
-  searchItem: event => {
+  searchItem: () => {
     event.preventDefault()
     const word = document.getElementById('search-word').value
     let filteredDishes = Storage.menuList.data.filter(dish => {
