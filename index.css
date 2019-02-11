@@ -3,6 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: aquamarine; */
 }
+
 .nav-bar {
   position: fixed;
   top: 0;
@@ -10,9 +11,15 @@ body {
   height: 100px;
   background-color: white;
   color: #f47321;
+  z-index: 1;
+  width: 100%;
 }
 .container {
   display: flex;
+}
+
+.right-container {
+  margin-top: 100px;
 }
 
 .item-image {
@@ -22,11 +29,12 @@ body {
   border-radius: 10px;
 }
 
-#menu-items {
+.menu-items {
+  margin: 20px;
+  margin-top: 100px;
   width: 500px;
   display: flex;
   border-radius: 10px;
-  margin: 20px;
   flex-wrap: wrap;
   overflow: auto;
   max-height: 100vh;
@@ -50,13 +58,11 @@ body {
   height: 5px;
   background-image: url(https://static.afcdn.com/relmrtn/Front/PageType/marmitonHomepage/assets/nuage.svg);
   background-size: 20px 10px;
-
   background-repeat: repeat-x;
   position: absolute;
   bottom: 0;
   height: 10px;
   width: 100%;
-  z-index: 1;
 }
 
 button {
@@ -69,8 +75,8 @@ button {
 }
 
 .recipe-home-search {
-  margin-top: 100px;
-  height: 100px;
+  height: 50px;
   text-align: center;
-  background-image: url(assets/nasi-goreng.jpg);
+  background: orange;
+  padding: 20px;
 }

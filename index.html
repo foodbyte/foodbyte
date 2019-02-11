@@ -11,21 +11,24 @@
     <div class="container">
       <div class="left-container">
         <div class="nav-bar">
+          <div class="recipe-home-search">
+            <form onsubmit="App.searchItem(event)" class="menu-form">
+              <input
+                id="search-word"
+                type="text"
+                placeholder="Search a dish ... "
+              />
+              <input type="submit" value="Find Dish" />
+            </form>
+            <button onclick="App.addItem()">Add A Dish</button>
+          </div>
+        </div>
+
+        <div id="menu-items" class="menu-items">
           <h1>FoodByte Menu</h1>
         </div>
-        <div class="recipe-home-search">
-          <form onsubmit="App.searchItem(event)" class="menu-form">
-            <input
-              id="search-word"
-              type="text"
-              placeholder="Search a dish ... "
-            />
-            <input type="submit" value="Find Dish" />
-          </form>
-          <button onclick="App.addItem()">Add A Dish</button>
-        </div>
-        <div id="menu-items"></div>
       </div>
+
       <div class="right-container">
         <div>
           <h1>Weekly Food Journal</h1>
