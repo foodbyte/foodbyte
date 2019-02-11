@@ -1,6 +1,6 @@
 const Storage = {
   menuList: {
-    nextId: 3,
+    nextId: 5,
     data: [
       {
         id: 1,
@@ -13,34 +13,19 @@ const Storage = {
         imageUrl: 'assets/soto-ayam.jpg',
       },
       {
-        id: 2,
-        name: 'Soto Ayam',
+        id: 3,
+        name: 'Soto Ayam3',
         imageUrl: 'assets/soto-ayam.jpg',
       },
       {
-        id: 2,
-        name: 'Soto Ayam',
+        id: 4,
+        name: 'Soto Ayam4',
         imageUrl: 'assets/soto-ayam.jpg',
-      },
-      {
-        id: 2,
-        name: 'Soto Ayam',
-        imageUrl: 'assets/soto-ayam.jpg',
-      },
-      {
-        id: 1,
-        name: 'Nasi Goreng',
-        imageUrl: 'assets/nasi-goreng.jpg',
-      },
-      {
-        id: 1,
-        name: 'Nasi Goreng',
-        imageUrl: 'assets/nasi-goreng.jpg',
       },
     ],
   },
   weeklyJournal: {
-    nextId: 2,
+    nextId: 3,
     data: [
       {
         id: 1,
@@ -69,7 +54,9 @@ const App = {
         </div>
         <span>${item.name}</span>
         <div>
-          <button>Add to this week</button> 
+          <button onclick="App.addToJournal(${
+            item.id
+          })">Add to this week</button> 
         </div>
       `
       $menuItems.append(div)
@@ -95,10 +82,19 @@ const App = {
     let filteredDishes = Storage.menuList.data.filter(dish => {
       return dish.name === word
     })
-    console.log(filteredDishes)
     const $menuItems = document.getElementById('menu-items')
     $menuItems.innerHTML = ''
     App.displayMenu(filteredDishes)
+  },
+  addToJournal: id => {
+    let meal = Storage.menuList.data.filter(meal => {
+      return meal.id === id
+    })
+    Storage.weeklyJournal.data.push(meal[0])
+    const $weeklyItems = document.getElementById('journal-collection')
+    $weeklyItems.innerHTML = ''
+    let weeklyItems = Storage.weeklyJournal.data
+    App.displayWeeklyJournal(weeklyItems)
   },
   displayWeeklyJournal: dishes => {
     const $weeklyItems = document.getElementById('journal-collection')
