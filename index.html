@@ -10,8 +10,10 @@
   <body>
     <div class="container">
       <div class="left-container">
-        <div class="recipe-home-search">
+        <div class="nav-bar">
           <h1>FoodByte Menu</h1>
+        </div>
+        <div class="recipe-home-search">
           <form onsubmit="App.searchItem(event)" class="menu-form">
             <input
               id="search-word"
@@ -20,19 +22,21 @@
             />
             <input type="submit" value="Find Dish" />
           </form>
+          <button onclick="App.addItem()">Add A Dish</button>
         </div>
-        <button onclick="App.addItem()">Add A Dish</button>
         <div id="menu-items"></div>
       </div>
       <div class="right-container">
-        <h1>Right container</h1>
-        <ul>
-          <li>toto</li>
-          <li>toto</li>
-          <li>toto</li>
-          <li>toto</li>
-          <li>toto</li>
-        </ul>
+        <div>
+          <h1>Weekly Food Journal</h1>
+        </div>
+        <div class="journal-input">
+          <form action="">
+            <input type="text" placeholder="Please enter current week" />
+            <input type="submit" value="Save Current Journal" />
+          </form>
+        </div>
+        <div id="journal-collection" class="journal-collection"></div>
       </div>
     </div>
 

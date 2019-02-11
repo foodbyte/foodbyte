@@ -39,6 +39,21 @@ const Storage = {
       },
     ],
   },
+  weeklyJournal: {
+    nextId: 2,
+    data: [
+      {
+        id: 1,
+        name: 'Nasi Goreng',
+        imageUrl: 'assets/nasi-goreng.jpg',
+      },
+      {
+        id: 2,
+        name: 'Soto Ayam',
+        imageUrl: 'assets/soto-ayam.jpg',
+      },
+    ],
+  },
 }
 
 const App = {
@@ -85,8 +100,28 @@ const App = {
     $menuItems.innerHTML = ''
     App.displayMenu(filteredDishes)
   },
+  displayWeeklyJournal: dishes => {
+    const $weeklyItems = document.getElementById('journal-collection')
+    dishes.forEach(item => {
+      const div = document.createElement('div')
+      div.setAttribute('class', 'menu-item')
+      div.innerHTML = `
+        <div class="m-item-image">
+          <img class="item-image" src="${item.imageUrl}">
+          <div class="m-bottom-design"></div>
+        </div>
+        <span>${item.name}</span>
+        <div>
+          <button>Remove from this week</button> 
+        </div>
+      `
+      $weeklyItems.append(div)
+    })
+  },
 }
 
 let menuItems = Storage.menuList.data
-
 App.displayMenu(menuItems)
+
+let weeklyItems = Storage.weeklyJournal.data
+App.displayWeeklyJournal(weeklyItems)

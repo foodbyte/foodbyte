@@ -3,7 +3,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: aquamarine; */
 }
-
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  background-color: white;
+  color: #f47321;
+}
 .container {
   display: flex;
 }
@@ -59,4 +66,11 @@ button {
   margin: 5px;
   color: white;
   font-size: 1rem;
+}
+
+.recipe-home-search {
+  margin-top: 100px;
+  height: 100px;
+  text-align: center;
+  background-image: url(assets/nasi-goreng.jpg);
 }
