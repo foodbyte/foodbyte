@@ -5,24 +5,24 @@ const Storage = {
       {
         id: 1,
         name: 'Nasi Goreng',
-        imageUrl: 'assets/nasi-goreng.jpg',
+        imageUrl: 'assets/nasi-goreng.jpg'
       },
       {
         id: 2,
         name: 'Soto Ayam',
-        imageUrl: 'assets/soto-ayam.jpg',
+        imageUrl: 'assets/soto-ayam.jpg'
       },
       {
         id: 3,
         name: 'Soto Ayam3',
-        imageUrl: 'assets/soto-ayam.jpg',
+        imageUrl: 'assets/soto-ayam.jpg'
       },
       {
         id: 4,
         name: 'Soto Ayam4',
-        imageUrl: 'assets/soto-ayam.jpg',
-      },
-    ],
+        imageUrl: 'assets/soto-ayam.jpg'
+      }
+    ]
   },
   weeklyJournal: {
     nextId: 3,
@@ -30,18 +30,26 @@ const Storage = {
       {
         id: 1,
         name: 'Nasi Goreng',
-        imageUrl: 'assets/nasi-goreng.jpg',
+        imageUrl: 'assets/nasi-goreng.jpg'
       },
       {
         id: 2,
         name: 'Soto Ayam',
-        imageUrl: 'assets/soto-ayam.jpg',
-      },
-    ],
-  },
+        imageUrl: 'assets/soto-ayam.jpg'
+      }
+    ]
+  }
 }
 
 const App = {
+  displayAll: () => {
+    let menuItems = Storage.menuList.data
+    let weeklyItems = Storage.weeklyJournal.data
+
+    App.displayMenu(menuItems)
+    App.displayWeeklyJournal(weeklyItems)
+  },
+
   displayMenu: dishes => {
     const $menuItems = document.getElementById('menu-items')
     dishes.forEach(item => {
@@ -62,13 +70,14 @@ const App = {
       $menuItems.append(div)
     })
   },
+
   addItem: () => {
     let itemName = prompt('Please enter the name of your dish')
     let itemImage = prompt('Please enter the image url of your dish')
     let newItem = {
       id: Storage.menuList.nextId,
       name: itemName,
-      imageUrl: itemImage,
+      imageUrl: itemImage
     }
     Storage.menuList.nextId += 1
     Storage.menuList.data.push(newItem)
@@ -76,6 +85,7 @@ const App = {
     $menuItems.innerHTML = ''
     App.displayMenu()
   },
+
   searchItem: event => {
     event.preventDefault()
     const word = document.getElementById('search-word').value
@@ -86,6 +96,7 @@ const App = {
     $menuItems.innerHTML = ''
     App.displayMenu(filteredDishes)
   },
+
   addToJournal: id => {
     let meal = Storage.menuList.data.filter(meal => {
       return meal.id === id
@@ -96,6 +107,7 @@ const App = {
     let weeklyItems = Storage.weeklyJournal.data
     App.displayWeeklyJournal(weeklyItems)
   },
+
   displayWeeklyJournal: dishes => {
     const $weeklyItems = document.getElementById('journal-collection')
     dishes.forEach(item => {
@@ -113,11 +125,7 @@ const App = {
       `
       $weeklyItems.append(div)
     })
-  },
+  }
 }
 
-let menuItems = Storage.menuList.data
-App.displayMenu(menuItems)
-
-let weeklyItems = Storage.weeklyJournal.data
-App.displayWeeklyJournal(weeklyItems)
+App.displayAll()
